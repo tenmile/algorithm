@@ -1,5 +1,7 @@
 #include "shell_sort.h"
 #include "insertion_sort.h"
+#include "selection_sort.h"
+#include "heap_sort.h"
 
 #include <vector>
 #include <iostream>
@@ -45,7 +47,7 @@ bool testFunc(sort_func f)
 //≤‚ ‘”√≥Ã–Ú
 int main()
 {
-	if (testFunc(shellSort))
+	if (testFunc(heapSort))
 	{
 		cout<<"SUCCEDED!!!"<<endl;
 	}  
