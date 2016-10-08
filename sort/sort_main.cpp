@@ -33,6 +33,7 @@ bool testFunc(sort_func f)
 	return true;
 }
 
+//≤‚ ‘”√≥Ã–Ú
 int main()
 {
 	if (testFunc(insertionSort))
