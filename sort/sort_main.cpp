@@ -9,11 +9,20 @@
 using namespace std;
 
 typedef void(*sort_func)(vector<int> &nums);
+ostream& operator<<(ostream &cout, vector<int> &nums)
+{
+	for (int i=0; i<nums.size(); ++i)
+	{
+		cout<<nums[i]<<" ";
+	}
+	cout<<endl;
+	return cout;
+}
 bool testFunc(sort_func f)
 {
 	vector<int> nums1(1000), nums2(1000);
-	int cout = 10;
-	while(cout)
+	int count = 10;
+	while(count)
 	{
 		srand(time(NULL));
 		for (int i=0; i<1000; ++i)
@@ -28,7 +37,7 @@ bool testFunc(sort_func f)
 		{
 			return false;
 		}
-		--cout;
+		--count;
 	}
 	return true;
 }
@@ -36,7 +45,7 @@ bool testFunc(sort_func f)
 //²âÊÔÓÃ³ÌÐò
 int main()
 {
-	if (testFunc(insertionSort))
+	if (testFunc(shellSort))
 	{
 		cout<<"SUCCEDED!!!"<<endl;
 	}  
