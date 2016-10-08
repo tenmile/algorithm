@@ -1,4 +1,6 @@
 #include "shell_sort.h"
+#include "insertion_sort.h"
+
 #include <vector>
 #include <iostream>
 #include <algorithm>
@@ -13,7 +15,7 @@ bool testFunc(sort_func f)
 	int cout = 10;
 	while(cout)
 	{
-		srand(time(0));
+		srand(time(NULL));
 		for (int i=0; i<1000; ++i)
 		{
 			int num = rand()%2000;
@@ -33,13 +35,14 @@ bool testFunc(sort_func f)
 
 int main()
 {
-	if (testFunc(shellSort))
+	if (testFunc(insertionSort))
 	{
 		cout<<"SUCCEDED!!!"<<endl;
-	} 
+	}  
 	else
 	{
 		cout<<"FAILED!!!"<<endl;
 	}
+	system("pause");
 	return 0;
 }
