@@ -1,12 +1,12 @@
-#include "selection_sort.h"
+﻿#include "selection_sort.h"
 
-//ֱ��ѡ�����򣬲���ͨ��
-//��������O(n^2)
-//������O(n^2)
-//ƽ�������O(n^2)
-//�����洢��O(1)
-//�ȶ��ԣ����ȶ�
-//�ɽ��иĽ���ÿ��ͬʱѡ����С������Ԫ��
+//直接选择排序，测试通过
+//最好情况：O(n^2)
+//最坏情况：O(n^2)
+//平均情况：O(n^2)
+//辅助存储：O(1)
+//稳定性：不稳定
+//可进行改进，每次同时选择最小和最大的元素
 void selectionSort(vector<int> &nums)
 {
 	int n = nums.size();

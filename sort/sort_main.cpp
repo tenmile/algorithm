@@ -1,4 +1,4 @@
-#include "shell_sort.h"
+ï»¿#include "shell_sort.h"
 #include "insertion_sort.h"
 #include "selection_sort.h"
 #include "heap_sort.h"
@@ -23,18 +23,23 @@ ostream& operator<<(ostream &cout, vector<int> &nums)
 bool testFunc(sort_func f)
 {
 	vector<int> nums1(1000), nums2(1000);
-	int count = 10;
+	int count = 100;
 	while(count)
 	{
 		srand(time(NULL));
 		for (int i=0; i<1000; ++i)
 		{
-			int num = rand()%2000;
+			int num = rand()%1000;
 			nums1[i] = num;
 			nums2[i] = num;
 		}
 		sort(nums1.begin(), nums1.end());
+
+		//cout<<"ç¬¬"<<11-count<<"ç»„æ•°æ®ï¼š"<<endl;
+		//cout<<nums2;
 		(*f)(nums2);
+		//cout<<nums2<<endl;
+
 		if (nums1 != nums2)
 		{
 			return false;
@@ -44,7 +49,14 @@ bool testFunc(sort_func f)
 	return true;
 }
 
-//²âÊÔÓÃ³ÌÐò
+sort_func funs[] = {
+	shellSort,
+	insertionSort,
+	selectionSort,
+	heapSort
+};
+
+//æµ‹è¯•ç”¨ç¨‹åº
 int main()
 {
 	if (testFunc(heapSort))
