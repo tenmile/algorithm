@@ -2,7 +2,12 @@
 #include "insertion_sort.h"
 #include "selection_sort.h"
 #include "heap_sort.h"
+#include "bubble_sort.h"
+#include "quick_sort.h"
+#include "merge_sort.h"
+#include "merge_sort2.h"
 
+#include "utilities.h"
 #include <vector>
 #include <iostream>
 #include <algorithm>
@@ -10,18 +15,26 @@
 #include <time.h>
 using namespace std;
 
+
 typedef void(*sort_func)(vector<int> &nums);
-ostream& operator<<(ostream &cout, vector<int> &nums)
+
+bool simpleTest(sort_func f)
 {
-	for (int i=0; i<nums.size(); ++i)
+	vector<int> nums(10);
+	srand(time(NULL));
+	for(int i=0; i<10; ++i)
 	{
-		cout<<nums[i]<<" ";
+		nums[i] = rand()%100;
 	}
-	cout<<endl;
-	return cout;
+	cout<<nums;
+	f(nums);
+	cout<<nums;
+	return true;
 }
+
 bool testFunc(sort_func f)
 {
+	simpleTest(f);
 	vector<int> nums1(1000), nums2(1000);
 	int count = 100;
 	while(count)
@@ -59,7 +72,7 @@ sort_func funs[] = {
 //测试用程序
 int main()
 {
-	if (testFunc(heapSort))
+	if (testFunc(mergeSort2))
 	{
 		cout<<"SUCCEDED!!!"<<endl;
 	}  
